@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "164899579078",
+    "firebase_url": "https://speedipay-dc71a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "speedipay-dc71a",
+    "storage_bucket": "speedipay-dc71a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164899579078:android:aad2a50ded755c7d9da3c7",
+        "android_client_info": {
+          "package_name": "com.speedipay.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164899579078-0il8j4ai8e0gnnts3i3elkmrjamci8t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speedipay.app",
+            "certificate_hash": "2930bf80eab6ed821d081a8e137132bbbb427b8e"
+          }
+        },
+        {
+          "client_id": "164899579078-73h8vg45e1t0raur36ar2knfnhlmb01r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speedipay.app",
+            "certificate_hash": "a2d04581b4a7e00ad07a8a5e78f4de38b20113b0"
+          }
+        },
+        {
+          "client_id": "164899579078-fa2s7kjk6v0mcpt7lmnd0ooqg4puf4oo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX_89Oj8tLd47zKj6qu6qry8wvo0KSUiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164899579078-fa2s7kjk6v0mcpt7lmnd0ooqg4puf4oo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
