@@ -1,6 +1,4 @@
 import 'package:six_cash/data/api/api_checker.dart';
-import 'package:six_cash/data/model/websitelink_models.dart';
-import 'package:six_cash/data/repository/websitelink_repo.dart';
 import 'package:get/get.dart';
 import 'package:six_cash/view/screens/bill_manage/model/utilityservice_models.dart';
 

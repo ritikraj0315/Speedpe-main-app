@@ -61,7 +61,7 @@ class _ProfileViewScreenState extends State<ProfileViewScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: CustomAppbar(title: 'Profile'.tr),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           children: [

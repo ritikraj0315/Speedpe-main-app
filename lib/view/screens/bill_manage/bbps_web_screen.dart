@@ -53,14 +53,14 @@ class _RpWebPageState extends State<RpWebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bill Payments'),
+        title: const Text('Bill Payments'),
       ),
       body: Column(
         children: [
           if (!isButtonClicked)
             ElevatedButton(
               onPressed: _loadUrl,
-              child: Text('Load app'),
+              child: const Text('Load app'),
             ),
           Expanded(
             child: isButtonClicked
