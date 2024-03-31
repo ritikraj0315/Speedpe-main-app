@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:six_cash/util/images.dart';
 
 class CustomLogo extends StatelessWidget {
@@ -11,9 +12,10 @@ class CustomLogo extends StatelessWidget {
     return SizedBox(
       height: height,
       width: width,
-      child: Image.asset(
-        Images.logo,
-        color: Theme.of(context).primaryColor,
+      child: SizedBox(
+        child: SvgPicture.asset(
+          Images.speedPeLogoSvg,
+        ),
       ),
     );
   }

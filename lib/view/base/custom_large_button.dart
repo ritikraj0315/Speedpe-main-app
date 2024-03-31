@@ -17,10 +17,10 @@ class CustomLargeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding:  EdgeInsets.only(
-          left: Dimensions.paddingSizeExtraExtraLarge,
-          right: Dimensions.paddingSizeExtraExtraLarge,
+          left: Dimensions.paddingSizeDefault,
+          right: Dimensions.paddingSizeDefault,
           bottom: bottomPadding,
       ),
       child: TextButton(
@@ -31,14 +31,14 @@ class CustomLargeButton extends StatelessWidget {
               vertical: Dimensions.paddingSizeDefault),
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radiusSizeDefault),
+            borderRadius: BorderRadius.circular(100),
           ),
         ),
         child:  Text(
           text!,
           style: walsheimMedium.copyWith(
-            color: Theme.of(context).indicatorColor,
-            fontSize: 18,
+            fontSize: 15,
+            color: Theme.of(context).focusColor
           ),
         ),
       ),

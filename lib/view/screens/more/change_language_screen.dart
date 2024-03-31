@@ -112,7 +112,7 @@ class _ChooseLanguageScreenState extends State<ChooseLanguageScreen> {
                         showCustomSnackBar('select_a_language'.tr,isError: false);
                       }
                     },
-                    backgroundColor: ColorResources.getLimeColor(),
+                    backgroundColor: Theme.of(context).primaryColor,
                     text: 'save'.tr,
                     textColor: ColorResources.blackColor,
                   ),

@@ -124,7 +124,7 @@ class _PinSetScreenState extends State<PinSetScreen> {
                                 height: 20.33,
                                 width: 20.33,
                                 child: CircularProgressIndicator(
-                                    color: ColorResources.getLimeColor())));
+                                    color: Theme.of(context).primaryColor)));
                   },
                 ),
                 const SizedBox(

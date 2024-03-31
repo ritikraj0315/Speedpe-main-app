@@ -1,4 +1,5 @@
 import 'package:flutter/gestures.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:phone_number/phone_number.dart';
 import 'package:six_cash/controller/auth_controller.dart';
 import 'package:six_cash/controller/create_account_controller.dart';
@@ -12,6 +13,7 @@ import 'package:get/get.dart';
 import 'package:six_cash/view/base/custom_snackbar.dart';
 
 import '../../../../helper/route_helper.dart';
+import '../../../../util/images.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({Key? key}) : super(key: key);
@@ -45,59 +47,80 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: Dimensions.paddingSizeDefault),
-                    child: Text(
-                      '${'create'.tr}${AppConstants.appName}',
-                      style: walsheimBold.copyWith(
-                        color: Theme.of(context).focusColor,
-                        fontSize: 35,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 150,
+                          child: SvgPicture.asset(
+                            Images.speedPeLogoSvg,
+                          ),
+                        ),
+                      const SizedBox(height: 15,),
+                      Text(
+                        "Let's start your journey\nwith Speedpe",
+                        style: walsheimBold.copyWith(
+                          color: Theme.of(context).focusColor,
+                          fontSize: 25,
+                        ),
+                        textAlign: TextAlign.start,
                       ),
-                      textAlign: TextAlign.start,
-                    ),
+                    ],)
                   ),
                   const SizedBox(
                     height: Dimensions.paddingSizeExtraLarge,
                   ),
                   GetBuilder<CreateAccountController>(
-                    builder: (controller) => Container(
+                    builder: (controller) => SizedBox(
                       height: 60,
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: Dimensions.paddingSizeDefault),
                       child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: Dimensions.paddingSizeDefault),
-                          decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
-                              borderRadius: BorderRadius.circular(
-                                  Dimensions.radiusSizeSmall),
-                              border: Border.all(width: .5)),
-                          //color: ColorResources.redColor,
-                          height: 55,
-                          child: Center(
-                            child: TextField(
-                              controller: numberFieldController,
-                              keyboardType: TextInputType.phone,
-                              style: walsheimRegular.copyWith(
-                                fontSize: 15,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.circular(Dimensions.radiusSizeSmall),
+                          color: Theme.of(context).cardColor,
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: Dimensions.marginSizeDefault),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "+91",
+                              style: walsheimLight.copyWith(
+                                fontSize: 17,
                                 color: Theme.of(context).focusColor,
                               ),
-                              cursorColor: Theme.of(context).primaryColor,
-                              decoration: InputDecoration(
-                                hintText: "Enter phone number",
-                                hintStyle: walsheimRegular.copyWith(
-                                  fontSize: 15,
-                                  color: Colors.grey,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: TextField(
+                                controller: numberFieldController,
+                                keyboardType: TextInputType.number,
+                                style: walsheimLight.copyWith(
+                                  fontSize: 17,
+                                  color: Theme.of(context).focusColor,
                                 ),
-                                contentPadding: const EdgeInsets.only(top: 13),
-                                border: InputBorder.none,
-                                // Remove default border
-                                focusedBorder: InputBorder.none,
-                                prefixIcon: CustomCountryCodePiker(
-                                  onChanged: (countryCode) => controller
-                                      .setCountryCode(countryCode.dialCode!),
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'Enter phone number'.tr,
+                                  hintStyle: walsheimLight.copyWith(
+                                    fontSize: 17,
+                                    color: Colors.grey,
+                                  ),
                                 ),
                               ),
-                            ),
-                          )),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -155,7 +178,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                           ElevatedButton(
                             onPressed: () async {
                               String phoneNumber =
-                                  '${Get.find<CreateAccountController>().countryCode}${numberFieldController.text}';
+                                  '+91${numberFieldController.text}';
                               try {
                                 await PhoneNumberUtil().parse(phoneNumber).then(
                                     (value) =>

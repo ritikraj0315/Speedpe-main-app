@@ -13,6 +13,7 @@ import 'package:six_cash/util/dimensions.dart';
 import 'package:six_cash/util/styles.dart';
 import 'package:six_cash/view/base/custom_snackbar.dart';
 import '../../../../util/images.dart';
+import '../../../base/custom_logo.dart';
 
 class LoginScreen extends StatefulWidget {
   final String? phoneNumber;
@@ -103,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(
-                    vertical: 50,
+                    vertical: 50, horizontal: 15
                   ),
                   // width: double.infinity,
                   child: SizedBox(
@@ -119,17 +120,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 //mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const SizedBox(
-                                    height: 50,
+                                    height: 10,
                                   ),
-                                  Text(
-                                    'Welcome back!'.tr,
-                                    textAlign: TextAlign.center,
-                                    style: walsheimRegular.copyWith(
-                                      color: Theme.of(context)
-                                          .focusColor
-                                          .withOpacity(0.9),
-                                      fontSize: Dimensions.fontSizeExtraLarge,
-                                    ),
+                                  const CustomLogo(
+                                    height: 100.0,
+                                    width: 150.0,
                                   ),
                                   const SizedBox(
                                     height: 5,
@@ -145,11 +140,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                             textAlign: TextAlign.center,
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: walsheimLight.copyWith(
+                                            style: walsheimMedium.copyWith(
                                               color:
                                                   Theme.of(context).focusColor,
                                               fontSize:
-                                                  Dimensions.fontSizeLarge,
+                                                  Dimensions.fontSizeSemiLarge,
                                             ),
                                           ),
                                         )
@@ -157,9 +152,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                           'user'.tr,
                                           overflow: TextOverflow.clip,
                                           textAlign: TextAlign.start,
-                                          style: walsheimLight.copyWith(
+                                          style: walsheimMedium.copyWith(
                                             color: Theme.of(context).focusColor,
-                                            fontSize: Dimensions.fontSizeLarge,
+                                            fontSize: Dimensions.fontSizeSemiLarge,
                                           ),
                                         ),
                                   const SizedBox(
@@ -168,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Text(
                                     'Verify pin to continue'.tr,
                                     textAlign: TextAlign.center,
-                                    style: walsheimLight.copyWith(
+                                    style: walsheimRegular.copyWith(
                                       color: Theme.of(context).highlightColor,
                                       fontSize: Dimensions.fontSizeDefault,
                                     ),
@@ -276,7 +271,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Column(
                           children: [
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 _buildKeyboardButton('1'),
                                 _buildKeyboardButton('2'),
@@ -284,10 +279,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 15,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 _buildKeyboardButton('4'),
                                 _buildKeyboardButton('5'),
@@ -295,10 +290,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 15,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 _buildKeyboardButton('7'),
                                 _buildKeyboardButton('8'),
@@ -306,10 +301,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 15,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 _buildFingerPrintButton(),
                                 _buildKeyboardButton('0'),
@@ -331,7 +326,6 @@ class _LoginScreenState extends State<LoginScreen> {
     Get.find<MenuItemController>().resetNavBar();
     String? code = _countryCode;
     String phone = phoneController.text.trim();
-    //String password = passwordController.text.trim();
     if (phone.isEmpty) {
       showCustomSnackBar('please_give_your_phone_number'.tr, isError: true);
     } else if (password.isEmpty) {
@@ -340,7 +334,8 @@ class _LoginScreenState extends State<LoginScreen> {
       showCustomSnackBar('pin_should_be_4_digit'.tr, isError: true);
     } else {
       try {
-        await Get.find<AuthController>().setUserData(UserData(phone: phone, countryCode: _countryCode));
+        await Get.find<AuthController>()
+            .setUserData(UserData(phone: phone, countryCode: _countryCode));
 
         Get.find<AuthController>()
             .login(code: code!, phone: phone, password: password)
@@ -358,11 +353,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _buildKeyboardButton(String value) {
     return MaterialButton(
       onPressed: () => _onKeyPressed(value),
+      shape: const CircleBorder(),
       child: Text(
         value,
         style: walsheimMedium.copyWith(
           color: Theme.of(context).focusColor,
-          fontSize: 18,
+          fontSize: 20,
         ),
       ),
     );
@@ -371,9 +367,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _buildDeleteButton() {
     return MaterialButton(
       onPressed: _onDeletePressed,
+      shape: const CircleBorder(),
       child: SizedBox(
-        height: 20,
-        width: 20,
+        height: 22,
+        width: 22,
         child: Image.asset(
           Images.backSpaceIcon,
           color: Theme.of(context).focusColor,
@@ -385,9 +382,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _buildFingerPrintButton() {
     return MaterialButton(
       onPressed: _onFingerPrintPressed,
+      shape: const CircleBorder(),
       child: SizedBox(
-        height: 20,
-        width: 20,
+        height: 22,
+        width: 22,
         child: Get.find<AuthController>().biometric
             ? Image.asset(
                 Images.fingerprintIcon,

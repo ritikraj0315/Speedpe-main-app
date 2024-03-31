@@ -351,7 +351,7 @@ class _ChooseThemeState extends State<ChooseTheme> {
                             isError: false);
                       }
                     },
-                    backgroundColor: ColorResources.getLimeColor(),
+                    backgroundColor: Theme.of(context).primaryColor,
                     text: 'Update theme'.tr,
                     textColor: ColorResources.blackColor,
                   ),

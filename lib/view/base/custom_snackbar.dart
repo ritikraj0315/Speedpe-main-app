@@ -62,11 +62,11 @@ void showCustomSnackBar(String? message,
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           borderRadius: Dimensions.radiusSizeSmall,
           message: message,
-          barBlur: 20,
+          barBlur: 0,
           overlayBlur: 0,
           duration: const Duration(seconds: 1),
           isDismissible: true,
-          backgroundColor: isError ? Colors.red.withOpacity(0.2) : Colors.green,
+          backgroundColor: isError ? Colors.red : Colors.green,
           icon: isIcon
               ? IconButton(
                   icon: const Icon(

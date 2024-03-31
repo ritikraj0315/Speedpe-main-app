@@ -149,7 +149,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         child: controller.isLoading
                             ? Center(
                                 child: CircularProgressIndicator(
-                                    color: ColorResources.getLimeColor()),
+                                    color: Theme.of(context).primaryColor),
                               )
                             : const SizedBox(),
                       )),

@@ -79,8 +79,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         : themeIndex == 3
                             ? const ThirdCardPortion()
                             : const FirstCardPortion(),
-                //const SizedBox(height: Dimensions.paddingSizeDefault),
-                // const RechargeAndBillPayments(),
               ]);
             }),
           ),

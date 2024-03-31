@@ -169,6 +169,8 @@ class Images {
   static const String chipIcon = 'assets/image/chip_icon.svg';
   static const String signalIcon = 'assets/image/signal_icon.svg';
 
+  static const String speedPeLogoSvg = 'assets/image/speedpe_logo_svg.svg';
+
   //animation
   static const String failedAnimation =
       'assets/animationFile/failed_animation.json';

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:six_cash/controller/auth_controller.dart';
 import 'package:six_cash/controller/splash_controller.dart';
 import 'package:six_cash/data/api/api_checker.dart';
@@ -9,6 +10,8 @@ import 'package:six_cash/util/images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:six_cash/view/base/custom_snackbar.dart';
+
+import '../../../util/color_resources.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -72,12 +75,14 @@ class _SplashScreenState extends State<SplashScreen>
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              Images.logo,
-              height: 100,
-              width: 100,
-              color: Theme.of(context).primaryColor,
+            SizedBox(
+              height: 120,
+              width: 200,
+              child: SvgPicture.asset(
+                Images.speedPeLogoSvg,
+              ),
             ),
           ],
         ),
