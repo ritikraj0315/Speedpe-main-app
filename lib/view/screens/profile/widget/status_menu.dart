@@ -64,12 +64,12 @@ class StatusMenu extends StatelessWidget {
                       return profController.isLoading
                           ? Center(
                           child: Text('off'.tr,
-                              style: sFProDisplayMedium.copyWith(
+                              style: walsheimMedium.copyWith(
                                   fontSize: 11,
                                   color:
                                   Theme.of(context).primaryColor)))
                           : Text(isOn! ? 'on'.tr : 'off'.tr,
-                          style: sFProDisplayMedium.copyWith(
+                          style: walsheimMedium.copyWith(
                               fontSize: 11,
                               color: Theme.of(context).primaryColor));
                     });
@@ -101,7 +101,7 @@ class TwoFactorShimmer extends StatelessWidget {
               Image.asset(Images.twoFactorAuthentication, width: 25.0, color: Theme.of(context).focusColor.withOpacity(0.6),),
               const SizedBox(width: Dimensions.paddingSizeDefault),
               Text('two_factor_authentication'.tr,
-                  style: sFProDisplayMedium.copyWith(
+                  style: walsheimMedium.copyWith(
                       fontSize: Dimensions.fontSizeLarge)),
               const Spacer(),
               GetBuilder<ProfileController>(

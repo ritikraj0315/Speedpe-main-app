@@ -25,7 +25,7 @@ class PurposeWidget extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeLarge,vertical: Dimensions.paddingSizeSmall),
-          child: Text('select_your_purpose'.tr,style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor),),
+          child: Text('select_your_purpose'.tr,style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor),),
         ),
     GetBuilder<TransactionMoneyController>(
       builder: (controller) {

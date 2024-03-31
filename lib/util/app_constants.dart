@@ -105,6 +105,7 @@ class AppConstants {
 
   //Bill Manage
   static const String customerUtilityService = '/api/v1/customer/utility-service';
+  static const String customerUtilityOperator = '/api/v1/customer/utility-operator';
 
   // Shared Key
   static const String theme = 'theme';

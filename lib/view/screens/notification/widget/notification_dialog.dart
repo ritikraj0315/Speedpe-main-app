@@ -62,7 +62,7 @@ class NotificationDialog extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
               child: Text(notificationModel.description!,
                   textAlign: TextAlign.center,
-                  style: sFProDisplayMedium.copyWith(
+                  style: walsheimMedium.copyWith(
                       color: Theme.of(context).highlightColor))),
         ],
       ),

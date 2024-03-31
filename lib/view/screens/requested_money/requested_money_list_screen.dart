@@ -156,7 +156,7 @@ class RequestTypeButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeExtraSmall),
           child: Text('$text($length)',
-              style: sFProDisplayRegular.copyWith(color: Get.find<RequestedMoneyController>().requestTypeIndex == index
+              style: walsheimRegular.copyWith(color: Get.find<RequestedMoneyController>().requestTypeIndex == index
                   ? Theme.of(context).indicatorColor : Theme.of(context).highlightColor)),
         ),
       ),

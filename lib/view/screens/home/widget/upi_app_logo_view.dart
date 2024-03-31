@@ -9,7 +9,6 @@ class UpiAppsLogoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      //mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const SizedBox(height: 50,),

@@ -69,7 +69,7 @@ class _AnimatedButtonViewState extends State<AnimatedButtonView> {
             child: Text(
               'withdraw_request'.tr, maxLines: 2,
               textAlign: TextAlign.center,
-              style: sFProDisplayRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+              style: walsheimRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
             ),
           ),
 

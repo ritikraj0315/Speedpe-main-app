@@ -47,7 +47,7 @@ class ComingSoonDialog extends StatelessWidget {
                             ),
                             Text(
                               "Page Coming Soon",
-                              style: sFProDisplayMedium.copyWith(
+                              style: walsheimMedium.copyWith(
                                 color: Theme.of(context).highlightColor,
                                 fontSize: 15,
                               ),

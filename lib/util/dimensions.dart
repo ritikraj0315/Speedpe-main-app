@@ -11,18 +11,23 @@ class Dimensions {
   static const double paddingSizeSuperExtraSmall = 2.0;
   static const double paddingSizeExtraSmall = 5.0;
   static const double paddingSizeSmall = 10.0;
-  static const double paddingSizeDefault = 16.0;
+  static const double paddingSizeDefault = 15.0;
   static const double paddingSizeLarge = 20.0;
   static const double paddingSizeExtraLarge = 25.0;
   static const double paddingSizeExtraExtraLarge = 32.0;
   static const double paddingSizeOverLarge = 45.0;
   static const double paddingSizeExtraOverLarge = 55.0;
 
+  static const double marginSizeExtraSmall = 5.0;
+  static const double marginSizeSmall = 15.0;
+  static const double marginSizeDefault = 15.0;
+  static const double marginSizeLarge = 15.0;
+
 
   static const double radiusSizeVerySmall = 4.0;
   static const double radiusSizeExtraSmall = 8.0;
   static const double radiusSizeSmall = 10.0;
-  static const double radiusSizeDefault = 16.0;
+  static const double radiusSizeDefault = 15.0;
   static const double radiusSizeLarge = 20.0;
   static const double radiusSizeExtraLarge = 30.0;
   static const double radiusSizeExtraExtraLarge = 40.0;

@@ -2,6 +2,7 @@ import 'package:six_cash/data/api/api_checker.dart';
 import 'package:get/get.dart';
 import 'package:six_cash/view/screens/bill_manage/model/utilityservice_models.dart';
 
+import '../model/utilityoperator_models.dart';
 import '../repository/billmanage_repo.dart';
 
 class BillManageController extends GetxController implements GetxService {
@@ -15,6 +16,11 @@ class BillManageController extends GetxController implements GetxService {
   List<UtilityServiceModel>? _utilityServiceListList;
 
   List<UtilityServiceModel>? get utilityServiceList => _utilityServiceListList;
+
+  List<UtilityOperatorModel>? _utilityOperatorListList;
+
+  List<UtilityOperatorModel>? get utilityOperatorList =>
+      _utilityOperatorListList;
 
   Future getUtilityServiceList(bool reload, {bool isUpdate = true}) async {
     if (_utilityServiceListList == null || reload) {
@@ -36,6 +42,34 @@ class BillManageController extends GetxController implements GetxService {
         });
       } else {
         _utilityServiceListList = [];
+        ApiChecker.checkApi(response);
+      }
+
+      _isLoading = false;
+      update();
+    }
+  }
+
+  Future getUtilityOperatorList(bool reload, {bool isUpdate = true}) async {
+    if (_utilityOperatorListList == null || reload) {
+      _utilityOperatorListList = null;
+      _isLoading = true;
+      if (isUpdate) {
+        update();
+      }
+    }
+    if (_utilityOperatorListList == null) {
+      _utilityOperatorListList = [];
+      Response response = await billManageRepo.getUtilityOperatorListApi();
+      if (response.body != null &&
+          response.body != {} &&
+          response.statusCode == 200) {
+        _utilityOperatorListList = [];
+        response.body.forEach((website) {
+          _utilityOperatorListList!.add(UtilityOperatorModel.fromJson(website));
+        });
+      } else {
+        _utilityOperatorListList = [];
         ApiChecker.checkApi(response);
       }
 

@@ -169,7 +169,7 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
                                       // Replace "\n" with newline character
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
-                                      style: sFProDisplayMedium.copyWith(
+                                      style: walsheimMedium.copyWith(
                                           fontSize: 11,
                                           color:
                                               Theme.of(context).highlightColor),

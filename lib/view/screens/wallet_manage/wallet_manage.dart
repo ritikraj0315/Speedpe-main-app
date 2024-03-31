@@ -116,7 +116,7 @@ class _WalletManageScreenState extends State<WalletManageScreen> {
                                       )
                                     : Text(
                                         PriceConverter.convertPrice(0.00),
-                                        style: sFProDisplayMedium.copyWith(
+                                        style: walsheimMedium.copyWith(
                                           color: Theme.of(context).focusColor,
                                           fontSize:
                                               Dimensions.fontSizeExtraLarge,

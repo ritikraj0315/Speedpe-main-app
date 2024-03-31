@@ -33,7 +33,7 @@ class CustomGenderCard extends StatelessWidget {
             ),
             Text(
               text!,
-              style: sFProDisplayRegular.copyWith(
+              style: walsheimRegular.copyWith(
                 color:  Theme.of(context).highlightColor,
                 fontSize: Dimensions.fontSizeDefault,
               ),

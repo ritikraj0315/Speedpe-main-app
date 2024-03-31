@@ -36,7 +36,7 @@ class CustomLargeButton extends StatelessWidget {
         ),
         child:  Text(
           text!,
-          style: sFProDisplaySemiBold.copyWith(
+          style: walsheimMedium.copyWith(
             color: Theme.of(context).indicatorColor,
             fontSize: 18,
           ),

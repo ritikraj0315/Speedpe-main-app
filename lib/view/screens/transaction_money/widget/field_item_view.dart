@@ -25,7 +25,7 @@ class FieldItemView extends StatelessWidget {
             children: [
               Text(
                 methodField!.inputName!.replaceAll('_', ' ').formattedUpperCase(),
-                style: sFProDisplayMedium.copyWith(color: Theme.of(context).primaryColor),
+                style: walsheimMedium.copyWith(color: Theme.of(context).primaryColor),
               ),
               const SizedBox(width: Dimensions.paddingSizeExtraSmall,),
 

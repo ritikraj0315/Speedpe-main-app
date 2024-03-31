@@ -110,6 +110,7 @@ class Images {
   static const String copyIcon = 'assets/image/copy_icon.png';
   static const String dateIcon = 'assets/image/date_icon.png';
   static const String contactIcon = 'assets/image/contactsIcon.png';
+  static const String loadingIcon = 'assets/image/loading_icon.png';
 
   static String getTransactionImage(transactionType) =>
       'assets/image/${transactionType == 'cash_in' ? 'send_money' : transactionType}.png';

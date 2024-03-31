@@ -24,81 +24,76 @@ class BannerBottomView extends StatelessWidget {
               return topBannerList == null
                   ? const Center(child: BannerShimmer())
                   : topBannerList.isNotEmpty
-                      ? Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(
-                                Dimensions.paddingSizeDefault,
-                                20,
-                                Dimensions.paddingSizeDefault,
-                                0),
-                            child: Text(
-                              "What's on SpeedPe?",
-                              style: walsheimRegular.copyWith(
-                                fontSize: 16,
-                                color: Theme.of(context)
-                                    .focusColor
-                                    .withOpacity(0.9),
+                      ? Container(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: Dimensions.marginSizeDefault),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "What's on SpeedPe?",
+                                style: walsheimRegular.copyWith(
+                                  fontSize: 16,
+                                  color: Theme.of(context)
+                                      .focusColor
+                                      .withOpacity(0.9),
+                                ),
                               ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          SizedBox(
-                            height: size.width / 3.0,
-                            width: size.width,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: topBannerList.length,
-                              itemBuilder: (context, index) {
-                                final image = topBannerList.isNotEmpty
-                                    ? topBannerList[index].image
-                                    : '';
-                                return InkWell(
-                                  onTap: () {
-                                    if (topBannerList.isNotEmpty) {
-                                      Get.to(WebScreen(
-                                          selectedUrl:
-                                              topBannerList[index].url!));
-                                    }
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              SizedBox(
+                                height: size.width / 3.0,
+                                width: size.width,
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: topBannerList.length,
+                                  itemBuilder: (context, index) {
+                                    final image = topBannerList.isNotEmpty
+                                        ? topBannerList[index].image
+                                        : '';
+                                    return GestureDetector(
+                                        onTap: () {
+                                          if (topBannerList.isNotEmpty) {
+                                            Get.to(WebScreen(
+                                                selectedUrl:
+                                                    topBannerList[index].url!));
+                                          }
+                                        },
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  80,
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius
+                                                      .circular(Dimensions
+                                                          .radiusSizeDefault)),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                child: CustomImage(
+                                                    image:
+                                                        "${Get.find<SplashController>().configModel!.baseUrls!.bannerImageUrl}/$image",
+                                                    fit: BoxFit.cover,
+                                                    placeholder: Images
+                                                        .bannerPlaceHolder),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 20,
+                                            )
+                                          ],
+                                        ));
                                   },
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        Dimensions.paddingSizeDefault,
-                                        0,
-                                        0,
-                                        0),
-                                    child: Container(
-                                      width: MediaQuery.of(context)
-                                              .size
-                                              .width -
-                                          80,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(
-                                                  Dimensions
-                                                      .radiusSizeDefault)),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(10),
-                                        child: CustomImage(
-                                            image:
-                                                "${Get.find<SplashController>().configModel!.baseUrls!.bannerImageUrl}/$image",
-                                            fit: BoxFit.cover,
-                                            placeholder:
-                                                Images.bannerPlaceHolder),
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      )
+                        )
                       : const SizedBox();
             })
           : const SizedBox();

@@ -13,7 +13,7 @@ class ExploreCustomImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: image, height: height, width: width, fit: fit,
-      color: Theme.of(context).focusColor.withOpacity(0.7),
+      color: Theme.of(context).cardColor,
       placeholder: (context, url) => Image.asset(placeholder!, height: height, width: width, fit: fit),
       errorWidget: (context, url, error) => Image.asset(placeholder!, height: height, width: width, fit: fit),
     );

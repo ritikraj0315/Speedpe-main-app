@@ -62,7 +62,7 @@ class ThemeWidget extends StatelessWidget {
               ),
               const SizedBox(height: Dimensions.paddingSizeLarge),
               Text(languageModel.languageName!,
-                  style: sFProDisplaySemiBold.copyWith(
+                  style: walsheimMedium.copyWith(
                       color: ColorResources.getBlackAndWhite())),
             ]),
           ),

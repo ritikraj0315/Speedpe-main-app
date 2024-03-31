@@ -34,13 +34,13 @@ class _FaqScreenState extends State<FaqScreen> {
                     iconColor: Theme.of(context).primaryColor,
                     collapsedIconColor: Theme.of(context).primaryColor,
                     title: Text(faqController.helpTopics![index].question!,
-                        style: sFProDisplaySemiBold.copyWith(
+                        style: walsheimMedium.copyWith(
                             color: Theme.of(context).highlightColor)),
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(faqController.helpTopics![index].answer!,
-                            style: sFProDisplayMedium.copyWith(color: Theme.of(context).highlightColor.withOpacity(0.5)),
+                            style: walsheimMedium.copyWith(color: Theme.of(context).highlightColor.withOpacity(0.5)),
                             textAlign: TextAlign.justify),
                       )
                     ],

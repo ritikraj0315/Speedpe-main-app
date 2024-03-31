@@ -47,7 +47,7 @@ class PurposeItem extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Center(
-                child: Text(title!,textAlign: TextAlign.center,style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeDefault,color: Theme.of(context).highlightColor),),
+                child: Text(title!,textAlign: TextAlign.center,style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeDefault,color: Theme.of(context).highlightColor),),
               ),
             )
 

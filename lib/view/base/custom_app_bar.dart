@@ -52,12 +52,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                   color: ColorResources.dividerColor,
                   //thickness: 2.0,
                 ),
-
-                Text(title, style: walsheimBold.copyWith(fontSize: 20, color: Theme.of(context).focusColor),
+                Text(title, style: walsheimRegular.copyWith(fontSize: 18, color: Theme.of(context).focusColor),
                 ),
-
                 isSkip ? const Spacer() : const SizedBox(),
-
                 isSkip ? SizedBox(child: RoundedButton(buttonText: 'skip'.tr, onTap: function, isSkip: true,)) : const SizedBox(),
               ],
             ),

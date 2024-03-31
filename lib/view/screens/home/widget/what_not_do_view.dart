@@ -22,80 +22,88 @@ class WhatNotDoView extends StatelessWidget {
               return topBannerList == null
                   ? const Center(child: BannerShimmer())
                   : topBannerList.isNotEmpty
-                      ? Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const SizedBox(height: 20,),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(
-                                  Dimensions.paddingSizeDefault,
-                                  20,
-                                  Dimensions.paddingSizeDefault,
-                                  0),
-                              child: Text(
+                      ? Container(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: Dimensions.marginSizeDefault),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
                                 "Reminder from SpeedPe",
                                 style: walsheimBold.copyWith(
                                   fontSize: 18,
                                   color: Theme.of(context)
-                                      .focusColor.withOpacity(0.9),
+                                      .focusColor
+                                      .withOpacity(0.9),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            SizedBox(
-                              height: size.width / 3.5,
-                              width: size.width,
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: topBannerList.length,
-                                itemBuilder: (context, index) {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      if (topBannerList.isNotEmpty) {
-                                        Get.to(WebScreen(
-                                            selectedUrl:
-                                                topBannerList[index].url!));
-                                      }
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          Dimensions.paddingSizeDefault,
-                                          0,
-                                          0,
-                                          0),
-                                      child: Container(
-                                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                                        width:
-                                            MediaQuery.of(context).size.width -
-                                                200,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).cardColor,
-                                            border: Border.all(color: Theme.of(context).focusColor.withOpacity(0.3), width: 0.5),
-                                            borderRadius: BorderRadius.circular(
-                                                Dimensions.radiusSizeDefault)),
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              topBannerList[index].title!,
-                                              style: walsheimLight.copyWith(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .focusColor.withOpacity(0.5),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ),
-                                    ),
-                                  );
-                                },
+                              const SizedBox(
+                                height: 15,
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: size.width / 3.5,
+                                width: size.width,
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: topBannerList.length,
+                                  itemBuilder: (context, index) {
+                                    return GestureDetector(
+                                        onTap: () {
+                                          if (topBannerList.isNotEmpty) {
+                                            Get.to(WebScreen(
+                                                selectedUrl:
+                                                    topBannerList[index].url!));
+                                          }
+                                        },
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        15, 0, 15, 0),
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width -
+                                                    200,
+                                                decoration: BoxDecoration(
+                                                    color: Theme.of(context)
+                                                        .cardColor,
+                                                    border: Border.all(
+                                                        color: Theme.of(context)
+                                                            .focusColor
+                                                            .withOpacity(0.3),
+                                                        width: 0.5),
+                                                    borderRadius: BorderRadius
+                                                        .circular(Dimensions
+                                                            .radiusSizeDefault)),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      topBannerList[index]
+                                                          .title!,
+                                                      style: walsheimLight
+                                                          .copyWith(
+                                                        fontSize: 14,
+                                                        color: Theme.of(context)
+                                                            .focusColor
+                                                            .withOpacity(0.5),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )),
+                                            const SizedBox(
+                                              width: 20,
+                                            )
+                                          ],
+                                        ));
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
                         )
                       : const SizedBox();
             })

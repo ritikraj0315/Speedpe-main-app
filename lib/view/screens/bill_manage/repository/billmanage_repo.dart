@@ -10,4 +10,8 @@ class BillManageRepo {
   Future<Response> getUtilityListApi() async {
     return await apiClient.getData(AppConstants.customerUtilityService);
   }
+
+  Future<Response> getUtilityOperatorListApi() async {
+    return await apiClient.getData(AppConstants.customerUtilityOperator);
+  }
 }

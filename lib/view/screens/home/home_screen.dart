@@ -81,11 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             : const FirstCardPortion(),
                 //const SizedBox(height: Dimensions.paddingSizeDefault),
                 // const RechargeAndBillPayments(),
-                const LinkedWebsite(),
-                const BannerBottomView(),
-                const WhatNotDoView(),
-                const UpiAppsLogoView(),
-                const SizedBox(height: 50,)
               ]);
             }),
           ),

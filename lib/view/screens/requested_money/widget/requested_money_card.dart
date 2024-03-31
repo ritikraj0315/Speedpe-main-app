@@ -97,22 +97,22 @@ class _RequestedMoneyCardState extends State<RequestedMoneyCard> {
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('$name',style: sFProDisplayMedium.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeLarge) ),
+                    Text('$name',style: walsheimMedium.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeLarge) ),
                     const SizedBox(height: Dimensions.paddingSizeSuperExtraSmall),
 
-                    Text('$phoneNumber',style: sFProDisplayMedium.copyWith(color: Theme.of(context).highlightColor.withOpacity(0.4),fontSize: Dimensions.fontSizeSmall) ),
+                    Text('$phoneNumber',style: walsheimMedium.copyWith(color: Theme.of(context).highlightColor.withOpacity(0.4),fontSize: Dimensions.fontSizeSmall) ),
                     const SizedBox(height: Dimensions.paddingSizeSuperExtraSmall),
 
-                    Text('${'amount'.tr} - ${PriceConverter.balanceWithSymbol(balance: widget.requestedMoney!.amount.toString())}',style: sFProDisplayMedium.copyWith(color: Theme.of(context).textTheme.titleLarge!.color,fontSize: Dimensions.fontSizeDefault) ),
+                    Text('${'amount'.tr} - ${PriceConverter.balanceWithSymbol(balance: widget.requestedMoney!.amount.toString())}',style: walsheimMedium.copyWith(color: Theme.of(context).textTheme.titleLarge!.color,fontSize: Dimensions.fontSizeDefault) ),
                     const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-                    Text(DateConverter.localDateToIsoStringAMPM(DateTime.parse(widget.requestedMoney!.createdAt!)), style: sFProDisplayRegular.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeSmall) ),
+                    Text(DateConverter.localDateToIsoStringAMPM(DateTime.parse(widget.requestedMoney!.createdAt!)), style: walsheimRegular.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeSmall) ),
                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     Row(
                       children: [
-                        Text('${'note'.tr} - ', style: sFProDisplaySemiBold.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeLarge)),
-                        Text(widget.requestedMoney!.note ?? 'no_note_available'.tr , maxLines: widget.isHome!? 1:10,overflow: TextOverflow.ellipsis,style: sFProDisplayMedium.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeDefault)),
+                        Text('${'note'.tr} - ', style: walsheimMedium.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeLarge)),
+                        Text(widget.requestedMoney!.note ?? 'no_note_available'.tr , maxLines: widget.isHome!? 1:10,overflow: TextOverflow.ellipsis,style: walsheimMedium.copyWith(color: Theme.of(context).highlightColor,fontSize: Dimensions.fontSizeDefault)),
                       ],
                     ),
                   ]),
@@ -170,7 +170,7 @@ class _RequestedMoneyCardState extends State<RequestedMoneyCard> {
                       ),
                     ),
                   ),
-                ],):Text(widget.requestedMoney!.type!.tr, style: sFProDisplayRegular.copyWith(color: ColorResources.getAcceptBtn()),)
+                ],):Text(widget.requestedMoney!.type!.tr, style: walsheimRegular.copyWith(color: ColorResources.getAcceptBtn()),)
             ],
           ),
           const SizedBox(height: 5),

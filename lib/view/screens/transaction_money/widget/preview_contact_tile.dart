@@ -20,7 +20,7 @@ class PreviewContactTile extends StatelessWidget {
     return ListTile(
         title:  Text(contactModel!.name==null?phoneNumber: contactModel!.name!, textAlign: TextAlign.center, style: walsheimBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).highlightColor)),
         subtitle:phoneNumber.isEmpty? const SizedBox():
-          Text(phoneNumber, textAlign: TextAlign.center, style: sFProDisplayMedium.copyWith(fontSize: 12, color: ColorResources.getGreyBaseGray1()),),
+          Text(phoneNumber, textAlign: TextAlign.center, style: walsheimMedium.copyWith(fontSize: 12, color: ColorResources.getGreyBaseGray1()),),
       );
   }
 }

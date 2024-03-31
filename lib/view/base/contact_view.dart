@@ -97,7 +97,7 @@ class ContactView extends StatelessWidget {
                             child: Text(
                               contactController.filterdContacts[index]
                                   .getSuspensionTag(),
-                              style: sFProDisplayRegular.copyWith(
+                              style: walsheimRegular.copyWith(
                                   fontSize: Dimensions.fontSizeLarge,
                                   color: ColorResources.getGreyBaseGray1()),
                             ),

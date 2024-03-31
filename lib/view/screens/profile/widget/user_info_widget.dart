@@ -139,7 +139,7 @@ class UserInfoWidget extends StatelessWidget {
                                         KycVerification.pending
                                     ? 'your_verification_request_is'.tr
                                     : 'your_verification_is_denied'.tr,
-                            style: sFProDisplayRegular.copyWith(
+                            style: walsheimRegular.copyWith(
                               color: Theme.of(context).colorScheme.error,
                             ),
                             maxLines: 2,
@@ -172,7 +172,7 @@ class UserInfoWidget extends StatelessWidget {
                                           KycVerification.pending
                                       ? 'edit'.tr
                                       : 're_apply'.tr,
-                              style: sFProDisplayMedium.copyWith(
+                              style: walsheimMedium.copyWith(
                                   color: Theme.of(context).cardColor),
                             ),
                           ),

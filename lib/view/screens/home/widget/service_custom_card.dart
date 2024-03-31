@@ -65,7 +65,7 @@ class ServiceCustomCard extends StatelessWidget {
                 text!,
                 textAlign: TextAlign.center,
                 maxLines: 2,
-                style: sFProDisplayMedium.copyWith(
+                style: walsheimMedium.copyWith(
                     fontSize: 11, color: Theme.of(context).highlightColor),
               ),
             ),

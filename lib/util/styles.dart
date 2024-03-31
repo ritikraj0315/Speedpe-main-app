@@ -26,41 +26,21 @@ const argestaMedium = TextStyle(
 );
 
 const walsheimLight = TextStyle(
-  fontFamily: 'Walsheim',
+  fontFamily: 'Walsheim-Light',
   fontWeight: FontWeight.w300,
 );
 
 const walsheimRegular = TextStyle(
-  fontFamily: 'Walsheim',
-  fontWeight: FontWeight.w600,
-);
-
-const walsheimMedium = TextStyle(
-  fontFamily: 'Walsheim',
-  fontWeight: FontWeight.w600,
-);
-
-const walsheimBold = TextStyle(
-  fontFamily: 'Walsheim',
-  fontWeight: FontWeight.w600,
-);
-
-const sFProDisplayRegular = TextStyle(
-  fontFamily: 'SF Pro Display',
+  fontFamily: 'Walsheim-Regular',
   fontWeight: FontWeight.w400,
 );
 
-const sFProDisplayMedium = TextStyle(
-  fontFamily: 'SF Pro Display',
+const walsheimMedium = TextStyle(
+  fontFamily: 'Walsheim-Medium',
   fontWeight: FontWeight.w500,
 );
 
-const sFProDisplaySemiBold = TextStyle(
-  fontFamily: 'SF Pro Display',
+const walsheimBold = TextStyle(
+  fontFamily: 'Walsheim-Bold',
   fontWeight: FontWeight.w600,
-);
-
-const sFProDisplayBold = TextStyle(
-  fontFamily: 'SF Pro Display',
-  fontWeight: FontWeight.w700,
 );

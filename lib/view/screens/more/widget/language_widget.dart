@@ -42,7 +42,7 @@ class LanguageWidget extends StatelessWidget {
                 child: Image.asset(languageModel.imageUrl!, width: 36, height: 36,color: Get.isDarkMode?  Theme.of(context).primaryColor:  Theme.of(context).primaryColor,),
               ),
               const SizedBox(height: Dimensions.paddingSizeLarge),
-              Text(languageModel.languageName!, style: sFProDisplaySemiBold.copyWith(color:  Theme.of(context).highlightColor)),
+              Text(languageModel.languageName!, style: walsheimMedium.copyWith(color:  Theme.of(context).highlightColor)),
             ]),
           ),
 

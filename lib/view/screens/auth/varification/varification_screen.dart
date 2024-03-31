@@ -34,9 +34,7 @@ class VerificationScreen extends StatefulWidget {
 class _VerificationScreenState extends State<VerificationScreen> {
   @override
   void initState() {
-    Get.snackbar("title", widget.userType!);
     Get.find<VerificationController>().startTimer();
-
     super.initState();
   }
 

@@ -44,11 +44,8 @@ class RequestMoneyView extends StatelessWidget {
                   ? const Center(child: BannerShimmer())
                   : requestMoneyController.pendingRequestedMoneyList.isNotEmpty
                       ? Container(
-                          margin: const EdgeInsets.fromLTRB(
-                              Dimensions.paddingSizeDefault,
-                              Dimensions.paddingSizeDefault,
-                              Dimensions.paddingSizeDefault,
-                              0),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: Dimensions.marginSizeDefault),
                           child: Column(
                             children: [
                               Container(

@@ -33,7 +33,7 @@ class NoDataFoundScreen extends StatelessWidget {
 
           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
           Text(
-             'no_data_found'.tr, textAlign: TextAlign.center, style: sFProDisplaySemiBold.copyWith(fontSize: 20, color: ColorResources.lightGrayColor),
+             'no_data_found'.tr, textAlign: TextAlign.center, style: walsheimMedium.copyWith(fontSize: 20, color: ColorResources.lightGrayColor),
           ),
           const SizedBox(height: 40),
 

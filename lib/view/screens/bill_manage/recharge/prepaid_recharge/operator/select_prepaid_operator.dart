@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/splash_controller.dart';
-import '../../../helper/app_routes.dart';
-import '../../../util/color_resources.dart';
-import '../../../util/dimensions.dart';
-import '../../../util/images.dart';
-import '../../../util/styles.dart';
-import '../../base/custom_app_bar.dart';
-import '../../base/custom_ink_well.dart';
-import '../../base/explore_custom_image.dart';
-import '../add_money/web_screen.dart';
-import '../home/widget/shimmer/web_site_shimmer.dart';
-import 'controller/billmanage_controller.dart';
+import '../../../../../../controller/splash_controller.dart';
+import '../../../../../../helper/app_routes.dart';
+import '../../../../../../util/color_resources.dart';
+import '../../../../../../util/dimensions.dart';
+import '../../../../../../util/images.dart';
+import '../../../../../../util/styles.dart';
+import '../../../../../base/custom_app_bar.dart';
+import '../../../../../base/custom_ink_well.dart';
+import '../../../../../base/explore_custom_image.dart';
+import '../../../../home/widget/shimmer/web_site_shimmer.dart';
+import '../../../controller/billmanage_controller.dart';
 
-class AllUtilityServiceScreen extends StatefulWidget {
-  const AllUtilityServiceScreen({Key? key}) : super(key: key);
+class SelectPrepaidOperatorScreen extends StatefulWidget {
+  const SelectPrepaidOperatorScreen({Key? key, required this.number})
+      : super(key: key);
+  final String number;
 
   @override
-  State<AllUtilityServiceScreen> createState() =>
-      _AllUtilityServiceScreenState();
+  State<SelectPrepaidOperatorScreen> createState() =>
+      _SelectPrepaidOperatorScreenState();
 }
 
-class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
+class _SelectPrepaidOperatorScreenState
+    extends State<SelectPrepaidOperatorScreen> {
   Future<void> _loadData(BuildContext context, bool reload) async {
     if (reload) {
       Get.find<SplashController>().getConfigData();
     }
 
     Get.find<BillManageController>()
-        .getUtilityServiceList(reload, isUpdate: reload);
+        .getUtilityOperatorList(reload, isUpdate: reload);
   }
 
   @override
@@ -41,7 +43,7 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: const CustomAppbar(title: 'Pay bill'),
+      appBar: const CustomAppbar(title: 'Select Operator'),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,7 +94,7 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
                             ),
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Search utilities'.tr,
+                              hintText: 'Search operator'.tr,
                               hintStyle: walsheimLight.copyWith(
                                 fontSize: 15,
                                 color: Colors.grey,
@@ -111,62 +113,31 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
                             return billManageController.isLoading
                                 ? const WebSiteShimmer()
                                 : billManageController
-                                        .utilityServiceList!.isEmpty
+                                        .utilityOperatorList!.isEmpty
                                     ? const SizedBox()
                                     : Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.fromLTRB(
-                                                0, 20, 0, 0),
-                                            child: Text(
-                                              "Pay your bills with SpeedPe",
-                                              style: walsheimRegular.copyWith(
-                                                fontSize: 16,
-                                                color: Theme.of(context)
-                                                    .focusColor
-                                                    .withOpacity(0.9),
-                                              ),
-                                            ),
+                                          const SizedBox(
+                                            height: 20,
                                           ),
-                                          Container(
+                                          SizedBox(
                                             height: MediaQuery.of(context)
                                                 .size
                                                 .height,
                                             width: double.infinity,
-                                            margin: const EdgeInsets.only(
-                                                top: Dimensions
-                                                    .paddingSizeSmall),
-                                            decoration: BoxDecoration(
-                                              // color: Theme.of(context).colorScheme.background,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: ColorResources
-                                                      .containerShedow
-                                                      .withOpacity(0.05),
-                                                  blurRadius: 20,
-                                                  offset: const Offset(0, 3),
-                                                )
-                                              ],
-                                            ),
-                                            child: GridView.builder(
-                                              gridDelegate:
-                                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 4,
-                                                childAspectRatio: 2 / 3.2,
-                                              ),
+                                            child: ListView.builder(
                                               itemCount: billManageController
-                                                  .utilityServiceList!.length,
+                                                  .utilityOperatorList!.length,
                                               scrollDirection: Axis.vertical,
                                               itemBuilder: (context, index) {
                                                 return CustomInkWell(
-                                                  onTap: () =>
-                                                      AppRoutes.openScreen(
-                                                          billManageController
-                                                              .utilityServiceList![
-                                                                  index]
-                                                              .url!),
+                                                  onTap: () => AppRoutes.openScreen(
+                                                      billManageController
+                                                          .utilityOperatorList![
+                                                              index]
+                                                          .infoText!),
                                                   radius: Dimensions
                                                       .radiusSizeExtraSmall,
                                                   highlightColor:
@@ -175,15 +146,23 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
                                                           .withOpacity(0.1),
                                                   child: Container(
                                                     width: 90,
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                        vertical: Dimensions
-                                                            .paddingSizeDefault),
-                                                    child: Column(
+                                                    margin: const EdgeInsets
+                                                        .symmetric(vertical: 8),
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10),
+                                                    decoration: BoxDecoration(
+                                                      color: Theme.of(context)
+                                                          .cardColor,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
+                                                    ),
+                                                    child: Row(
                                                       children: [
                                                         Container(
-                                                          width: 55,
-                                                          height: 55,
+                                                          width: 45,
+                                                          height: 45,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Theme.of(
@@ -193,6 +172,7 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
                                                                 BorderRadius
                                                                     .circular(
                                                                         15),
+                                                            // Half of width/height to make it a circle
                                                             boxShadow: [
                                                               BoxShadow(
                                                                 color: ColorResources
@@ -203,41 +183,39 @@ class _AllUtilityServiceScreenState extends State<AllUtilityServiceScreen> {
                                                                 offset:
                                                                     const Offset(
                                                                         0, 3),
-                                                              )
+                                                              ),
                                                             ],
                                                           ),
-                                                          child: Container(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .all(15),
-                                                            height: 20,
-                                                            width: 20,
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        15),
+                                                            // Half of width/height to clip content as circle
                                                             child:
-                                                                ExploreCustomImage(
-                                                              image:
-                                                                  "${Get.find<SplashController>().configModel!.baseUrls!.linkedWebsiteImageUrl}/${billManageController.utilityServiceList![index].image}" ?? Images.languageIcon,
-                                                              placeholder: Images
-                                                                  .loadingIcon,
-                                                              fit: BoxFit.cover,
+                                                                Image.network(
+                                                              "${Get.find<SplashController>().configModel!.baseUrls!.linkedWebsiteImageUrl}/${billManageController.utilityOperatorList![index].image}" ??
+                                                                  Images
+                                                                      .loadingIcon,
+                                                              fit: BoxFit
+                                                                  .cover, // Adjust the fit as needed
                                                             ),
                                                           ),
                                                         ),
                                                         const SizedBox(
-                                                          height: 10,
+                                                          width: 15,
                                                         ),
                                                         Text(
                                                           billManageController
-                                                              .utilityServiceList![
+                                                              .utilityOperatorList![
                                                                   index]
-                                                              .name!
-                                                              .replaceAll(
-                                                                  " ", "\n"),
+                                                              .title!,
                                                           textAlign:
                                                               TextAlign.center,
                                                           softWrap: true,
                                                           maxLines: 2,
-                                                          style: walsheimMedium.copyWith(
-                                                              fontSize: 12,
+                                                          style: walsheimBold.copyWith(
+                                                              fontSize: 14,
                                                               color: Theme.of(
                                                                       context)
                                                                   .indicatorColor

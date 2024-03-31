@@ -209,7 +209,7 @@ class TransactionTypeButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeExtraSmall),
           child: Text(text,
-              style: sFProDisplayMedium.copyWith(fontSize: Dimensions.fontSizeDefault,color: Get.find<TransactionHistoryController>().transactionTypeIndex == index
+              style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeDefault,color: Get.find<TransactionHistoryController>().transactionTypeIndex == index
                   ? Theme.of(context).indicatorColor : Theme.of(context).highlightColor)),
         ),
       ),

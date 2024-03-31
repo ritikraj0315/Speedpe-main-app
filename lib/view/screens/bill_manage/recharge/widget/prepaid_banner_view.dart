@@ -10,11 +10,10 @@ import 'package:six_cash/view/base/custom_image.dart';
 import 'package:six_cash/view/screens/add_money/web_screen.dart';
 import 'package:six_cash/view/screens/home/widget/shimmer/banner_shimmer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../../../../data/model/banner_model.dart';
 
-import '../../../../data/model/banner_model.dart';
-
-class BannerTopView extends StatelessWidget {
-  const BannerTopView({Key? key}) : super(key: key);
+class PrepaidBannerView extends StatelessWidget {
+  const PrepaidBannerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class BannerTopView extends StatelessWidget {
                   : topBannerList.isNotEmpty
                       ? Container(
                           margin: const EdgeInsets.symmetric(
-                              vertical: Dimensions.marginSizeDefault),
+                              vertical: Dimensions.paddingSizeLarge),
                           child: Stack(
                             children: [
                               SizedBox(
@@ -49,21 +48,26 @@ class BannerTopView extends StatelessWidget {
                                                   topBannerList[index].url!));
                                         }
                                       },
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        decoration: BoxDecoration(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal:
+                                                0),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15)),
+                                          child: ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(15)),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          child: CustomImage(
-                                              image:
-                                                  "${Get.find<SplashController>().configModel!.baseUrls!.bannerImageUrl}/$image",
-                                              fit: BoxFit.cover,
-                                              placeholder:
-                                                  Images.bannerPlaceHolder),
+                                                BorderRadius.circular(15),
+                                            child: CustomImage(
+                                                image:
+                                                    "${Get.find<SplashController>().configModel!.baseUrls!.bannerImageUrl}/$image",
+                                                fit: BoxFit.cover,
+                                                placeholder:
+                                                    Images.bannerPlaceHolder),
+                                          ),
                                         ),
                                       ),
                                     );

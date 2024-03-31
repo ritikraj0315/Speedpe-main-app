@@ -108,7 +108,7 @@ flutter:
         - asset: assets/font/Walsheim-Medium.ttf
           weight: 500
         - asset: assets/font/Walsheim-Bold.ttf
-          weight: 600
+          weight: 800
 
     - family: SF Pro Display
       fonts:

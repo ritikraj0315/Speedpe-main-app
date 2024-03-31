@@ -83,7 +83,7 @@ class _ChooseLanguageScreenState extends State<ChooseLanguageScreen> {
                         const SizedBox(height: Dimensions.paddingSizeLarge),
 
                         Text('* ${'you_can_change_language'.tr}',
-                            style: sFProDisplayMedium.copyWith(
+                            style: walsheimMedium.copyWith(
                               fontSize: Dimensions.fontSizeSmall,
                               color:  Theme.of(context).primaryColor,
                             )),

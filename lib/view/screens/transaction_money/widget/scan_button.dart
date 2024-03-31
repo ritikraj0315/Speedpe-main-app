@@ -34,7 +34,7 @@ class ScanButton extends StatelessWidget {
                 Image.asset(Images.qrCode, width: Dimensions.paddingSizeDefault, color: Theme.of(context).primaryColor,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
-                  child: Text('scan_qr_code'.tr, style: sFProDisplayMedium.copyWith(fontSize: 11, color: Theme.of(context).highlightColor),),
+                  child: Text('scan_qr_code'.tr, style: walsheimMedium.copyWith(fontSize: 11, color: Theme.of(context).highlightColor),),
                 )
               ],
             ),

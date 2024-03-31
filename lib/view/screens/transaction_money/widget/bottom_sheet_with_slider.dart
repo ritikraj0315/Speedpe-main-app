@@ -151,7 +151,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                                     : cashOutCharge)
                             }',
 
-                            style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
+                            style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
                           );
                         }
                       ),
@@ -180,7 +180,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                               children: [
                                 Text(
                                   widget.contactModel!.name == null?'(unknown )' :'(${widget.contactModel!.name}) ',
-                                  style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
+                                  style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
                                   maxLines: 1,overflow: TextOverflow.ellipsis,
                                 ),
 
@@ -197,7 +197,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                             transactionMoneyController.isNextBottomSheet ?
                             transactionId != null? Text(
                               'TrxID: $transactionId',
-                              style: sFProDisplayMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
+                              style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).highlightColor),
                             ): const SizedBox() : const SizedBox(),
 
                           ],
@@ -227,7 +227,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                             ? Get.find<SplashController>().configModel!.sendMoneyChargeFlat.toString()
                             :  cashOutCharge.toString(),trxId: transactionId,
                       ),
-                      child: Text('share_statement'.tr, style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor)),
+                      child: Text('share_statement'.tr, style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor)),
                     ),
 
                     const SizedBox(height: Dimensions.paddingSizeDefault),
@@ -254,7 +254,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                         height: 50.0,
                         child: Center(child: Text(
                           'back_to_home'.tr,
-                          style: sFProDisplaySemiBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor),
+                          style: walsheimMedium.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).highlightColor),
                         )),
 
                       ),
@@ -267,7 +267,7 @@ class _BottomSheetWithSliderState extends State<BottomSheetWithSlider> {
                         height: 60.0,
                         backgroundColor: Theme.of(context).cardColor,
                         text: 'swipe_to_confirm'.tr,
-                        textStyle: sFProDisplayMedium.copyWith(fontSize: 18, color: ColorResources.lightGrayColor),
+                        textStyle: walsheimMedium.copyWith(fontSize: 18, color: ColorResources.lightGrayColor),
                         shadow: const BoxShadow(),
                         sliderButtonContent: Container(
                           padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),

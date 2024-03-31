@@ -227,12 +227,12 @@ class _TransactionMoneyToUpiScreenState extends State<TransactionMoneyToUpiScree
                                                               .name!,
                                                           style: sendMoneyController.sendMoneySuggestList[index].name ==
                                                               null
-                                                              ? sFProDisplayMedium.copyWith(
+                                                              ? walsheimMedium.copyWith(
                                                               fontSize: Dimensions
                                                                   .fontSizeSmall,
                                                               color: Theme.of(context)
                                                                   .highlightColor)
-                                                              : sFProDisplayMedium.copyWith(
+                                                              : walsheimMedium.copyWith(
                                                               fontSize: Dimensions
                                                                   .fontSizeDefault,
                                                               color: Theme.of(context).highlightColor)),
