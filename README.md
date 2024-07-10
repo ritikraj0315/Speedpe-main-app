@@ -1,4 +1,4 @@
-# SpeedPe UPI Payment App
+# SpeedPe Payment App
 ## - made with love by ritik raj
 SpeedPe is a user-friendly UPI payment application developed using Flutter. It aims to provide a seamless and secure platform for users to perform instant transactions with ease.
 
